@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+     .container {
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            height: 100vh; /* 100% del alto de la ventana del navegador */
+        }
+        .center-div {
+            width: 300px; /* Ajusta el ancho según tus necesidades */
+            background-color: lightgray;
+            padding: 20px;
+        }   
+    </style>
+    
+    <title>Calculadora IMC</title>
+</head>
+<body>
+    <div class="container">
+        <div class="center-div">
+            <h1>Calculadora de IMC</h1>
+            <form method="post">
+                <label>Peso (kg):</label>
+                <input type="text" name="peso" required>
+                <br><br><br>
+                <label>Talla (m):</label>
+                <input type="text" name="talla" required>
+                <br><br><br>
+                <input type="submit" value="Calcular">
+            </form>
+            {% if descripcion %}
+                <h2>Resultado: {{ imc }}</h2>
+                <h2>Descripción: {{ descripcion }}</h2>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
